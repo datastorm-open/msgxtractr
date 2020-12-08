@@ -31,8 +31,6 @@ read_msg <- function(path) {
     times = process_times(x)
   ) -> res
 
-  print(res)
-  print(process_body(x))
   class(res) <- "msg"
 
   # list(
