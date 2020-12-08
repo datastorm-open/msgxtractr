@@ -11,7 +11,7 @@
 #' read_msg(system.file("extdata/TestMessage-unicode.msg", package="msgxtractr"))
 read_msg <- function(path) {
 
-  path <- normalizePath(path.expand(path))
+  # path <- normalizePath(path.expand(path))
   if (!file.exists(path)) stop("File not found.", call.=FALSE)
 
   x <- int_read_msg(path)
@@ -31,6 +31,8 @@ read_msg <- function(path) {
     times = process_times(x)
   ) -> res
 
+  print(res)
+  print(process_body(x))
   class(res) <- "msg"
 
   # list(
